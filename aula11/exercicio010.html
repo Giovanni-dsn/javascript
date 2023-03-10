@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <label for="itxtvel">Velocidade do Carro</label>
+    <input type="number" name="txtvel" id="itxtvel" step="0.1" value="50" min="40">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">Resultado</div>
+    <script>
+        function verificar() {
+            var txtvel = document.getElementById('itxtvel').value
+            var vel = Number(txtvel)
+            var res = document.getElementById('res')
+            if (vel > 50) {
+                var valormulta = vel * 1.43
+                var multa = valormulta.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+                res.innerText = `Seu automóvel está acima do limite de velocidade. Você será multado em ${multa} por isso`
+            } else {
+                res.innerText = 'Seu automóvel está dentro do limite de velocidade de 50km/h. Por favor, siga em frente.'
+            }
+        }
+    </script>
+</body>
+</html>

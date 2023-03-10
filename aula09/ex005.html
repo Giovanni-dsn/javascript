@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-size: 18pt;
+        }
+    </style>
 </head>
 <body>
     <h1>Meu primeiro DOM</h1>
+    <p>Teste de código</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <div>Clique em mim</div>
+    <script>
+        var p1 = document.getElementsByTagName('p')[0]
+        document.write(p1.innerText)
+    </script>
 </body>
 </html>
