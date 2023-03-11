@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <main>
+        <label for="iano">Ano de Nascimento:</label>
+        <input type="number" name="ano" id="iano" required placeholder=" Ex: 1950">
+        <br>
+        <label for="isexo">Sexo:</label>
+        <span>
+            <input type="radio" name="sexo" id="isexo" value="f">Feminino
+            <input type="radio" name="sexo" id="isexo" value="m">Masculino
+        </span>
+        <br>
+        <input type="button" value="Enviar" class="botao" onclick="verificar()">
+        <section id="dados">
+            <p id="res">Aqui ficará resultado</p>
+            <div id="img">
+            </div>
+        </section>
+        <p>Preencha os dados para ver o resultado !</p>
+    <script>
+        function verificar(){
+            var txtano = document.getElementById('iano').value
+            var ano = Number(txtano)
+            var sex = document.getElementById('sex').value
+            var data = new Date()
+            var txtanoatual = data.getFullYear()
+            var anoatual = Number(txtanoatual)
+            var idade = anoatual - ano
+            var dados = document.querySelector('#dados');
+            document.dados.style.display = 'block'
+        }
+    </script>
+    </main>
+</body>
+</html>
