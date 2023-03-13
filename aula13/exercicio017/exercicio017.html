@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo</title>
+    <style>
+        @charset "UTF-8";
+
+        body,html {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        body {
+            background-color: dodgerblue;
+        }
+
+        * {
+            margin: 0%;
+            padding: 0%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15pt;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            margin: auto;
+            width: 70vw;
+            max-width: 700px;
+            margin-top: 100px;
+            border-radius: 10px;
+            box-shadow: 0px 1px 3px #00000063;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding-top: 40px;
+            text-shadow: 1px 1px 1px #00000071;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        footer {
+            background-color: #302e2eee;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 1px #00000071;
+            margin: 40px auto;
+            width: fit-content;
+            padding: 4px 6px;
+            border-radius: 8px;
+        }
+
+        label {
+            font-weight: bold;
+            padding-right: 8px;
+        }
+
+        span {display: block;}
+
+        textarea {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .caixa {
+            border-radius: 3px;
+            border: solid 1px black;
+            text-align: center;
+            width: 150px;
+        }
+
+        .botao {
+            padding: 0px 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+    <section class="container">
+        <label for="numero">Número:</label>
+        <input type="number" name="num" id="num" class="caixa">
+        <input type="button" value="Enviar" class="botao" onclick="gerar()" id="botao">
+        <span>
+            <textarea name="area" id="texto" cols="30" rows="10"></textarea>
+        </span>
+    </section>
+    <footer>
+        <p>Desenvolvido por Giovanni Novais</p>
+    </footer>
+    <script>
+        function gerar() {
+            var txtnum = document.getElementById('num')
+            var num = Number(txtnum.value)
+            var areatexto = document.getElementById('texto')
+            var c = 1
+            areatexto.innerHTML = ''
+            while (c <= num) {
+                var tabu = `${num} x ${c} = ${num*c}`
+                areatexto.innerHTML = document.write(`${tabu}`)
+                c += 1
+            }   
+        }
+    </script>
+</body>
+</html>

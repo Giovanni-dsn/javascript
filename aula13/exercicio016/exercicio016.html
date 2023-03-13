@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetições</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vamos Contar</h1>
+    </header>
+    <section class="container">
+        <span>
+            <label for="inicio">Início:</label>
+            <input type="number" name="inicio" id="inicio" required>
+        </span>
+        <span>
+            <label for="fim" class="labelfim">Fim:</label>
+            <input type="number" name="fim" id="fim" required>
+        </span>
+        <span>
+            <label for="passo">Passo:</label>
+            <input type="number" name="passo" id="passo" value="1">
+        </span>
+        <input type="button" value="Contar" class="botao" onclick="contar()">
+        <div id="res">Preparando a contagem...</div>
+    </section>
+    <footer>
+        <p>Desenvolvido por Giovanni Novais</p>
+    </footer>
+    <script>
+        function contar() {
+            var txtinicio = document.getElementById('inicio').value
+            var txtfim = document.getElementById('fim').value
+            var txtpasso = document.getElementById('passo').value
+            var inicio = Number(txtinicio)
+            var fim = Number(txtfim)
+            var passo = Number(txtpasso)
+            var res = document.getElementById('res')
+            res.innerText = ''
+            if (passo <= 0 || inicio == fim) {
+                window.alert('[ERRO] Dados inválidos. O passo é igual a 0 ou Inicio e Fim são iguais.')
+            } else {
+                if (inicio < fim) {
+                    for (a = inicio;a <= fim; a += passo) {
+                        if (a != fim) {
+                            res.innerText = `${res.innerText} ${a} >>`
+                        } else {
+                            res.innerText = `${res.innerText} ${a} FIM!` 
+                        }
+                    }
+                } else {
+                    for (a = inicio;a >= fim; a -= passo) {
+                        if (a != fim) {
+                            res.innerText = `${res.innerText} ${a} >>`
+                        } else {
+                            res.innerText = `${res.innerText} ${a} FIM!` 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
