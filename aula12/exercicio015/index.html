@@ -15,30 +15,18 @@
         <br>
         <label for="isexo">Sexo:</label>
         <span>
-            <input type="radio" name="sexo" id="isexo" value="f">Feminino
-            <input type="radio" name="sexo" id="isexo" value="m">Masculino
+            <input type="radio" name="sexo" id="isexo" class="fem" value="f" oninput="valorfem()">Feminino
+            <input type="radio" name="sexo" id="isexo" class="masc" value="m" oninput="valormasc()">Masculino
         </span>
         <br>
         <input type="button" value="Enviar" class="botao" onclick="verificar()">
-        <section id="dados">
+        <section id="pessoa">
             <p id="res">Aqui ficará resultado</p>
             <div id="img">
             </div>
         </section>
-        <p>Preencha os dados para ver o resultado !</p>
-    <script>
-        function verificar(){
-            var txtano = document.getElementById('iano').value
-            var ano = Number(txtano)
-            var sex = document.getElementById('sex').value
-            var data = new Date()
-            var txtanoatual = data.getFullYear()
-            var anoatual = Number(txtanoatual)
-            var idade = anoatual - ano
-            var dados = document.querySelector('#dados');
-            document.dados.style.display = 'block'
-        }
-    </script>
+        <p id="frasefinal">Preencha os dados para ver o resultado !</p>
+        <script src="verificador.js"></script>
     </main>
 </body>
 </html>

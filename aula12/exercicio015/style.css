@@ -38,6 +38,14 @@ main input {
     margin: 10px 0px;
 }
 
+#isexo {
+    margin-left: 15px;
+}
+
+#iano {
+    padding: 3px 5px;
+}
+
 #img {
     height: 300px;
     width: 300px;
@@ -45,7 +53,7 @@ main input {
     margin: 25px auto 45px auto;
 }
 
-#dados {
+#pessoa {
     display: none;
 }
 
