@@ -30,38 +30,6 @@
     <footer>
         <p>Desenvolvido por Giovanni Novais</p>
     </footer>
-    <script>
-        function contar() {
-            var txtinicio = document.getElementById('inicio').value
-            var txtfim = document.getElementById('fim').value
-            var txtpasso = document.getElementById('passo').value
-            var inicio = Number(txtinicio)
-            var fim = Number(txtfim)
-            var passo = Number(txtpasso)
-            var res = document.getElementById('res')
-            res.innerText = ''
-            if (passo <= 0 || inicio == fim) {
-                window.alert('[ERRO] Dados inválidos. O passo é igual a 0 ou Inicio e Fim são iguais.')
-            } else {
-                if (inicio < fim) {
-                    for (a = inicio;a <= fim; a += passo) {
-                        if (a != fim) {
-                            res.innerText = `${res.innerText} ${a} >>`
-                        } else {
-                            res.innerText = `${res.innerText} ${a} FIM!` 
-                        }
-                    }
-                } else {
-                    for (a = inicio;a >= fim; a -= passo) {
-                        if (a != fim) {
-                            res.innerText = `${res.innerText} ${a} >>`
-                        } else {
-                            res.innerText = `${res.innerText} ${a} FIM!` 
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="contador.js"></script>
 </body>
 </html>

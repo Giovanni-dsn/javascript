@@ -64,9 +64,13 @@
 
         span {display: block;}
 
-        textarea {
+        select {
             margin-top: 30px;
-            text-align: center;
+            text-align: left;
+        }
+
+        option {
+            padding: 3px;
         }
 
         .caixa {
@@ -90,7 +94,7 @@
         <input type="number" name="num" id="num" class="caixa">
         <input type="button" value="Enviar" class="botao" onclick="gerar()" id="botao">
         <span>
-            <textarea name="area" id="texto" cols="30" rows="10"></textarea>
+            <select name="tabuada" id="tabuada" size="10"></select>
         </span>
     </section>
     <footer>
@@ -100,12 +104,15 @@
         function gerar() {
             var txtnum = document.getElementById('num')
             var num = Number(txtnum.value)
-            var areatexto = document.getElementById('texto')
+            var tabuada = document.getElementById('tabuada')
             var c = 1
-            areatexto.innerHTML = ''
-            while (c <= num) {
+            tabuada.innerHTML = ''
+            while (c <= 10) {
+                var item = document.createElement('option')
+                tabuada.appendChild(item)
                 var tabu = `${num} x ${c} = ${num*c}`
-                areatexto.innerHTML = document.write(`${tabu}`)
+                var b = c - 1
+                item.text = tabu
                 c += 1
             }   
         }

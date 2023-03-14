@@ -1,16 +1,31 @@
 function contar() {
-    var txtinicio = document.getElementById('inicio')
-    var txtfim = document.getElementById('fim')
-    var txtpasso = document.getElementById('passo')
+    var txtinicio = document.getElementById('inicio').value
+    var txtfim = document.getElementById('fim').value
+    var txtpasso = document.getElementById('passo').value
     var inicio = Number(txtinicio)
     var fim = Number(txtfim)
     var passo = Number(txtpasso)
     var res = document.getElementById('res')
-    if (passo <= 0) {
-        window.alert('O passo não pode ser negativo ou 0')
+    res.innerText = ''
+    if (passo <= 0 || inicio == fim) {
+        window.alert('[ERRO] Dados inválidos. O passo é igual a 0 ou Inicio e Fim são iguais.')
     } else {
-        for (a = inicio;a <= fim; a += passo) {
-            document.write(res)
+        if (inicio < fim) {
+            for (a = inicio;a <= fim; a += passo) {
+                if (a != fim) {
+                    res.innerText += ` ${a} >>`
+                } else {
+                    res.innerText += `${a} \u{1F3C1}` 
+                }
+            }
+        } else {
+            for (a = inicio;a >= fim; a -= passo) {
+                if (a != fim) {
+                    res.innerText += ` ${a} >>`
+                } else {
+                    res.innerText += `${a} \u{1F3C1}` 
+                }
+            }
         }
     }
 }
