@@ -5,72 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analisador</title>
-    <style>
-        @charset "UTF-8";
-
-        body,html {
-            height: 100vh;
-            width: 100vw;
-        }
-
-        body {
-            background-color: dodgerblue;
-        }
-
-        * {
-            margin: 0%;
-            padding: 0%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .container {
-            background-color: white;
-            padding: 20px;
-            margin: auto;
-            width: 70vw;
-            max-width: 700px;
-            margin-top: 100px;
-            border-radius: 10px;
-            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.39);
-        }
-
-        header {
-            text-align: center;
-            color: white;
-            padding-top: 40px;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.445);
-        }
-
-        header h1 {
-            font-size: 2em;
-        }
-
-        span {
-            display: block;
-            width: fit-content;
-            margin: auto;
-        }
-
-        .botao {
-            padding: 2px 4px;
-            font-weight: bold;
-        }
-
-        #num {
-            width: 80px;
-        }
-
-        footer {
-            background-color: #302e2eee;
-            text-align: center;
-            color: white;
-            text-shadow: 1px 1px 1px #00000071;
-            margin: 40px auto;
-            width: fit-content;
-            padding: 4px 6px;
-            border-radius: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -80,10 +15,11 @@
         <span>
             <label for="num">Digite um número entre 1 e 100:</label>
             <input type="number" name="num" id="num">
-            <input type="button" value="Adicionar" class="botao">
+            <input type="button" value="Adicionar" class="botao" onclick="adicionar()">
         </span>
         <select name="space" id="space"></select>
-        <input type="button" value="Finalizar" class="botao">
+        <input type="button" value="Finalizar" class="botao" id="botao2" onclick="finalizar()">
+        <div id="res"><p id="pres"></p></div>
     </section>
     <footer>
         <p>Desenvolvido por Giovanni Novais</p>
